@@ -46,9 +46,15 @@ public class Produto {
 	private Integer estoque;
 	
 	//Cardinalidade do relacionamento - Many to One/Muitos para Um
+	//Categoria
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
+	
+	//Usuário
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Usuario usuario;
 
 	//Getters e Setters
 	public Long getId() {
@@ -97,6 +103,14 @@ public class Produto {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 }
